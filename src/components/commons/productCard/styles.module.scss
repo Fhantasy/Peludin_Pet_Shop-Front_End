@@ -1,0 +1,100 @@
+@import "../../../../styles/colors.module.scss";
+
+.productCard {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 285px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+.sectionTitle {
+  text-align: center;
+  font-family: Changa;
+  font-size: 25px;
+  color: black;
+  margin: 40px 20px 10px 20px;
+}
+.productImg {
+  width: 200px;
+  height: 200px;
+}
+.productName {
+  font-family: Changa;
+  font-size: 18px;
+  text-align: center;
+  line-height: 20px;
+  height: 60px;
+  margin-top: 5px;
+  padding: 0px 3px;
+  color: black;
+}
+.oldPrice {
+  color: red;
+  font-size: 15px;
+  line-height: 5px;
+  margin-top: 8px;
+}
+.price {
+  font-size: 20px;
+  color: $dark-green;
+  margin-top: 6px;
+  font-weight: bold;
+}
+.priceOnSale {
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+}
+
+@media (max-width: 630px) {
+  .productImg {
+    width: 80%;
+    height: 70%;
+  }
+  .sectionTitle {
+    font-size: 20px;
+  }
+  .productName {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .productCard {
+    height: 250px;
+  }
+  .sectionTitle {
+    font-size: 17px;
+  }
+  .productName {
+    font-size: 14px;
+  }
+  .oldPrice {
+    font-size: 12px;
+  }
+  .price {
+    font-size: 17px;
+  }
+  .priceOnSale {
+    font-size: 17px;
+  }
+}
+@media (max-width: 420px) {
+  .productCard {
+    height: 200px;
+  }
+  .sectionTitle {
+    font-size: 16px;
+  }
+  .productName {
+    height: 50px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .productImg {
+    width: 70%;
+    height: 60%;
+  }
+}
