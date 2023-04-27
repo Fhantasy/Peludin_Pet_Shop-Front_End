@@ -4,6 +4,7 @@ import Header from "@/src/components/commons/header";
 import SlideComponent from "@/src/components/commons/slideComponent";
 import PresentationSlideSection from "@/src/components/home/presentationSlideSection";
 import FeaturedProductsSlideSection from "@/src/components/home/featuredProductsSlideSection";
+import Footer from "@/src/components/commons/footer";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Header></Header>
         <PresentationSlideSection />
         <FeaturedProductsSlideSection />
+        <Footer />
       </main>
     </>
   );

@@ -1,0 +1,41 @@
+@import "../../../../styles/colors.module.scss";
+
+.footerDiv {
+  background-color: $medium-green;
+  text-align: center;
+  height: 100px;
+  padding-top: 20px;
+}
+.socialDiv {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.socialImg {
+  width: 35px;
+  margin-left: 5px;
+}
+.socialTitle {
+  font-family: Changa;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.credits {
+  font-size: 13px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 10px;
+}
+
+@media (max-width: 370px) {
+  .socialTitle {
+    font-size: 15px;
+  }
+  .socialImg {
+    width: 30px;
+  }
+  .credits {
+    font-size: 11px;
+  }
+}

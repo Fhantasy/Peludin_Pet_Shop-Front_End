@@ -10,8 +10,8 @@ const SlideComponent = function ({ splideProps, cards }: props) {
   return (
     <>
       <Splide options={splideProps.options} className="mx-auto">
-        {cards.map((card) => (
-          <SplideSlide>{card}</SplideSlide>
+        {cards.map((card, index) => (
+          <SplideSlide key={index}>{card}</SplideSlide>
         ))}
       </Splide>
     </>
