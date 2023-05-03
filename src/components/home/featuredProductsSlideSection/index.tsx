@@ -34,20 +34,24 @@ const FeaturedProductsSlideSection = function () {
       type: "loop",
       perPage: slideCount,
       perMove: 1,
-      width: slideCount * 300,
+      width: slideCount * 260,
       gap: "10px",
       pagination: false,
       breakpoints: {
         1210: {
           perPage: 3,
-          width: 900,
+          width: 780,
         },
         910: {
           perPage: 2,
-          width: 600,
+          width: 450,
         },
-        770: {
-          width: "90%",
+        500: {
+          width: 420,
+        },
+        439: {
+          perPage: 1,
+          width: 205,
         },
       },
     },
@@ -55,10 +59,12 @@ const FeaturedProductsSlideSection = function () {
 
   return (
     <>
-      <p className={styles.sectionTitle}>
-        De uma olhada em alguns de nossos produtos
-      </p>
-      <SlideComponent cards={cards} splideProps={options} />
+      <div className="mb-5">
+        <p className={styles.sectionTitle}>
+          De uma olhada em alguns de nossos produtos
+        </p>
+        <SlideComponent cards={cards} splideProps={options} />
+      </div>
     </>
   );
 };

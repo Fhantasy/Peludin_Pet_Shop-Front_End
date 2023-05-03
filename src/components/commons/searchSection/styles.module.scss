@@ -1,0 +1,46 @@
+@import "../../../../styles/colors.module.scss";
+.searchDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 5px 0;
+  gap: 5px;
+}
+.inputSearch {
+  width: 200px;
+  height: 25px;
+  &:focus {
+    box-shadow: none;
+    border-color: $dark-green;
+  }
+}
+.inputButton {
+  background-color: $medium-pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 25px;
+  font-size: 15px;
+}
+@media (max-width: 499px) {
+  .searchDiv {
+    justify-content: center;
+  }
+  .inputButton {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .searchDiv {
+    justify-content: center;
+  }
+  .inputButton {
+    height: 20px;
+    width: 80px;
+  }
+  .inputSearch {
+    width: 150px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,24 @@
+.productsDiv {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+@media (max-width: 1399px) {
+  .productsDiv {
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    gap: 10px;
+  }
+}
+@media (max-width: 991px) {
+  .productsDiv {
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 767px) {
+  .productsDiv {
+    grid-template-columns: 100%;
+  }
+}

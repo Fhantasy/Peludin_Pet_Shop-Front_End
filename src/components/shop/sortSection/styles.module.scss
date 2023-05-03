@@ -1,0 +1,31 @@
+@import "../../../../styles/colors.module.scss";
+.dropdown {
+  text-align: end;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  color: $medium-green;
+}
+.dropdownToggle {
+  color: white;
+  background-color: $medium-green;
+  border: none;
+  transition: none;
+  &:hover {
+    background-color: white;
+    color: $dark-green;
+  }
+  &:active {
+    background-color: white;
+    color: $dark-green;
+  }
+  &:focus {
+    background-color: white;
+    color: $dark-green;
+  }
+}
+@media (max-width: 499px) {
+  .dropdownToggle {
+    width: 100px;
+    font-size: 12px;
+  }
+}

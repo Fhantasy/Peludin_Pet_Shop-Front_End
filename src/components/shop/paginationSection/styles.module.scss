@@ -1,0 +1,27 @@
+@import "../../../../styles/colors.module.scss";
+
+.paginationContainer {
+  width: fit-content;
+}
+.paginationItem {
+  color: white;
+  background-color: $dark-green;
+  &:hover {
+    color: $dark-green;
+  }
+  &:focus {
+    box-shadow: none;
+    color: $dark-green;
+  }
+}
+.selected {
+  background-color: white;
+  color: $dark-green;
+  &:hover {
+    color: $dark-green;
+  }
+  &:focus {
+    box-shadow: none;
+    color: $dark-green;
+  }
+}
