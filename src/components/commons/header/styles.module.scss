@@ -19,6 +19,12 @@
   -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: $medium-pink;
 }
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7px;
+}
 .headerBtn {
   background-color: $dark-green;
   border: none;
@@ -27,6 +33,21 @@
     background-color: $medium-pink;
     border: none;
   }
+}
+.cartDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartIcon {
+  width: 35px;
+}
+.cartIconText {
+  font-size: 21px;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: absolute;
+  color: white;
 }
 
 .navDiv {
@@ -69,7 +90,6 @@
   }
   .headerBtn {
     padding: 4px 10px;
-    margin-bottom: 7px;
   }
   .logo {
     width: 150px;
@@ -97,12 +117,17 @@
   .headerBtn {
     padding: 2px 5px;
     font-size: 11px;
-    margin-bottom: 7px;
   }
   .navText {
     font-size: 12px;
     &:hover {
       font-size: 15px;
     }
+  }
+  .cartIcon {
+    width: 28px;
+  }
+  .cartIconText {
+    font-size: 16px;
   }
 }

@@ -1,0 +1,47 @@
+.infosDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+.cepForm {
+  display: flex;
+  gap: 5px;
+}
+.inputCep {
+  width: 100px;
+}
+.cepCalcBtn {
+  display: flex;
+  align-items: center;
+  height: 28px;
+}
+.notWork {
+  color: red;
+  text-align: center;
+  height: 10px;
+}
+.totalPrice {
+  color: black;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+.buyBtn {
+  background-color: green;
+  border: none;
+  &:hover {
+    background-color: #01ac01;
+  }
+}
+
+@media (max-width: 767px) {
+  .cepCalcBtn {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+@media (max-width: 319px) {
+  .infosDiv {
+    width: 200px;
+  }
+}

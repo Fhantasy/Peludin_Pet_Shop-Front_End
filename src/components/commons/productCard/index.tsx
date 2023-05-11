@@ -18,14 +18,18 @@ const ProductCard = function ({ product }: props) {
             className={styles.productImg}
           />
           {product.onSale ? (
-            <p className={styles.oldPrice}>De R${product.price} por:</p>
+            <p className={styles.oldPrice}>
+              De R${product.price.toFixed(2)} por:
+            </p>
           ) : (
             <></>
           )}
           {product.onSale ? (
-            <p className={styles.priceOnSale}>R${product.priceOnSale}</p>
+            <p className={styles.priceOnSale}>
+              R${product.priceOnSale.toFixed(2)}
+            </p>
           ) : (
-            <p className={styles.price}>R${product.price}</p>
+            <p className={styles.price}>R${product.price.toFixed(2)}</p>
           )}
         </div>
       </Link>

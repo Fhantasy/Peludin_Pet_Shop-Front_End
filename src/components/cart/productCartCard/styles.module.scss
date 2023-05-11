@@ -1,0 +1,135 @@
+@import "../../../../styles/colors.module.scss";
+
+.productsDiv {
+  max-height: 600px;
+  overflow-y: auto;
+}
+.cardDiv {
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.cardImg {
+  width: 100px;
+  height: 100px;
+}
+.descriptionDiv {
+  width: 250px;
+}
+.productName {
+  font-size: 17px;
+  color: black;
+}
+.productPrice {
+  color: #202020;
+}
+.actionsDiv {
+  text-align: center;
+  margin-right: 5px;
+}
+.removeBtn {
+  width: 80px;
+  background-color: $dark-green;
+  font-size: 14px;
+  border-radius: 0px;
+  border: none;
+}
+.quantityDiv {
+  display: flex;
+  align-items: center;
+}
+.quantityTitle {
+  color: black;
+  font-size: 14px;
+}
+.quantityNumber {
+  font-size: 18px;
+  font-weight: bold;
+}
+.quantityIncrement {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+  line-height: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 22px;
+  }
+}
+.emptyCart {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .cardDiv {
+    width: 340px;
+  }
+  .cardImg {
+    width: 90px;
+    height: 90px;
+  }
+  .descriptionDiv {
+    width: 160px;
+  }
+  .productName {
+    font-size: 15px;
+  }
+  .quantityTitle {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .cardDiv {
+    width: auto;
+    gap: 6px;
+  }
+  .descriptionDiv {
+    width: 270px;
+  }
+  .cardImg {
+    width: 70px;
+    height: 70px;
+  }
+  .productName {
+    font-size: 13px;
+    height: 35px;
+    overflow: hidden;
+  }
+  .productPrice {
+    font-size: 14px;
+  }
+}
+@media (max-width: 499px) {
+  .productsDiv {
+    max-height: 200px;
+  }
+  .descriptionDiv {
+    width: 150px;
+  }
+}
+@media (max-width: 374px) {
+  .descriptionDiv {
+    width: 100px;
+  }
+  .removeBtn {
+    width: 70px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 319px) {
+  .descriptionDiv {
+  }
+}

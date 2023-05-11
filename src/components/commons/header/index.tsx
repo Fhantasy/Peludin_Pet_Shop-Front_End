@@ -1,8 +1,23 @@
-import { Container, Button } from "reactstrap";
+import { Container, Button, Label } from "reactstrap";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import productService from "@/src/services/productService";
+interface props {
+  cartUpdated?: boolean;
+}
 
-const Header = function () {
+const Header = function ({ cartUpdated }: props) {
+  const [cartCount, setCartCount] = useState(0);
+
+  function getCartCount() {
+    const cookie = productService.getCookie("product=");
+    cookie ? setCartCount(cookie.valuesList.length) : setCartCount(0);
+  }
+
+  useEffect(() => {
+    getCartCount();
+  }, [[], cartUpdated]);
   return (
     <>
       <div className={styles.headerDiv}>
@@ -15,10 +30,22 @@ const Header = function () {
             Seu pet merece todo carinho e cuidado
           </p>
           <div className={styles.btnDiv}>
-            <Link href="/login">
+            <Link href="/cart">
+              <div className={styles.cartDiv}>
+                <p className={styles.cartIconText}>
+                  {cartCount && cartCount > 0 ? cartCount : ""}
+                </p>
+                <img
+                  src="/cart-icon.png"
+                  alt="cart-icon"
+                  className={styles.cartIcon}
+                />
+              </div>
+            </Link>
+            <Link href="/login" className={styles.btnLink}>
               <Button className={styles.headerBtn}>Entrar</Button>
             </Link>
-            <Link href="/register">
+            <Link href="/register" className={styles.btnLink}>
               <Button className={styles.headerBtn}>Registro</Button>
             </Link>
           </div>

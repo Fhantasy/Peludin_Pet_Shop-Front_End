@@ -115,6 +115,31 @@ const productService = {
       getProductsByCategory(productList);
     }
   },
+
+  getCookie: function (key: string) {
+    const cookies = document.cookie;
+    if (cookies.indexOf(key) !== -1) {
+      const cookieInitial = cookies.substring(
+        cookies.indexOf(key),
+        cookies.length
+      );
+      const cookie = cookieInitial.substring(
+        0,
+        cookieInitial.indexOf(";") === -1
+          ? cookieInitial.length
+          : cookieInitial.indexOf(";") - 1
+      );
+
+      if (cookie) {
+        const cookieValues = cookie.substring(
+          cookie.indexOf("=") + 1,
+          cookie.indexOf(";") === -1 ? cookie.length : cookie.indexOf(";")
+        );
+        const valuesList = cookieValues.split(" ");
+        return { valuesList, cookie };
+      }
+    }
+  },
 };
 
 export default productService;

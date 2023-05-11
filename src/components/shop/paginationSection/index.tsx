@@ -60,17 +60,15 @@ const PaginationSection = function ({
 
   for (let i = 1; i <= totalPageNumber; i++) {
     paginationList.push(
-      <PaginationItem key={i}>
-        <PaginationLink
-          className={styles.paginationItem}
-          id={`number-${i}`}
-          onClick={() => {
-            setCurrentPage(i);
-          }}
-        >
-          {i}
-        </PaginationLink>
-      </PaginationItem>
+      <PaginationLink
+        className={styles.paginationItem}
+        id={`number-${i}`}
+        onClick={() => {
+          setCurrentPage(i);
+        }}
+      >
+        {i}
+      </PaginationLink>
     );
   }
 
@@ -101,8 +99,8 @@ const PaginationSection = function ({
           </PaginationItem>
         )}
 
-        {paginationList.map((page) => (
-          <>{page}</>
+        {paginationList.map((page, index) => (
+          <PaginationItem key={index}>{page}</PaginationItem>
         ))}
         {currentPage === totalPageNumber ? (
           <></>
