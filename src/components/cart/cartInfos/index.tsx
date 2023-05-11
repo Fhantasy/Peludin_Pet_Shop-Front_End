@@ -28,11 +28,10 @@ const CartInfos = function ({ totalPrice }: props) {
     <>
       <div className={styles.infosDiv}>
         <Form className={styles.cepForm} onSubmit={(ev) => fretCalc(ev)}>
-          <InputMask
+          <Input
             className={styles.inputCep}
             name="cep"
-            mask="99999-999"
-            maskChar={""}
+            data-mask="00000-000"
             placeholder="99999-999"
             required
             onChange={(ev) => handleChange(ev)}

@@ -9,11 +9,13 @@
   gap: 5px;
 }
 .inputCep {
-  width: 100px;
+  width: 110px;
+  height: 30px;
 }
 .cepCalcBtn {
   display: flex;
   align-items: center;
+  align-self: center;
   height: 28px;
 }
 .notWork {

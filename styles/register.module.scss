@@ -1,0 +1,51 @@
+@import "../styles/colors.module.scss";
+
+.form {
+  background-color: $medium-green;
+  width: 60%;
+  padding: 15px;
+  border-radius: 5px;
+  color: black;
+  margin: 0 auto;
+}
+.formTitle {
+  text-align: center;
+  font-family: Changa;
+  font-size: 30px;
+}
+.input {
+  border: none;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.submitBtn {
+  background-color: $medium-pink;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  border: none;
+  &:hover {
+    background-color: #c47087;
+  }
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 80%;
+  }
+}
+@media (max-width: 499px) {
+  .formTitle {
+    font-size: 18px;
+  }
+  .form {
+    font-size: 14px;
+    width: 95%;
+  }
+  .input {
+    font-size: 14px;
+  }
+  .submitBtn {
+    font-size: 16px;
+  }
+}

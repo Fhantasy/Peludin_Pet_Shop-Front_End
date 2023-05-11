@@ -38,6 +38,7 @@ export default function Cart() {
     <>
       <Head>
         <title>Peludin - Carrinho</title>
+        <script src="https://jsuites.net/v4/jsuites.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
