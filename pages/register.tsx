@@ -1,5 +1,5 @@
 import Footer from "@/src/components/commons/footer";
-import styles from "../styles/register.module.scss";
+import styles from "../styles/registerLogin.module.scss";
 import Header from "@/src/components/commons/header";
 import Head from "next/head";
 import { FormEvent, useEffect, useState } from "react";
@@ -66,6 +66,12 @@ export default function Register() {
       setToastMessage(data.data.message);
     }
   }
+
+  useEffect(() => {
+    if (sessionStorage.getItem("peludin-token")) {
+      router.push("/");
+    }
+  }, []);
 
   useEffect(() => {
     getMaxDate();

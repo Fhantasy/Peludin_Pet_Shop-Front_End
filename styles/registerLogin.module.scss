@@ -1,5 +1,12 @@
 @import "../styles/colors.module.scss";
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.formContainer {
+  flex: 1 0 auto;
+}
 .form {
   background-color: $medium-green;
   width: 60%;

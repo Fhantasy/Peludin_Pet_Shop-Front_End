@@ -3,17 +3,34 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import productService from "@/src/services/productService";
+import DropdownComponent from "./dropdownComponent";
+import userService from "@/src/services/userService";
 interface props {
   cartUpdated?: boolean;
 }
 
 const Header = function ({ cartUpdated }: props) {
   const [cartCount, setCartCount] = useState(0);
+  const [loged, setLoged] = useState(false);
+  const [username, setUsername] = useState("");
 
   function getCartCount() {
     const cookie = productService.getCookie("product=");
     cookie ? setCartCount(cookie.valuesList.length) : setCartCount(0);
   }
+
+  async function getCurrentUser() {
+    const user = await userService.getCurrent();
+    setUsername(user.firstName);
+  }
+
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("peludin-token")) setLoged(true);
+  }, []);
 
   useEffect(() => {
     getCartCount();
@@ -42,12 +59,18 @@ const Header = function ({ cartUpdated }: props) {
                 />
               </div>
             </Link>
-            <Link href="/login" className={styles.btnLink}>
-              <Button className={styles.headerBtn}>Entrar</Button>
-            </Link>
-            <Link href="/register" className={styles.btnLink}>
-              <Button className={styles.headerBtn}>Registro</Button>
-            </Link>
+            {!loged ? (
+              <>
+                <Link href="/login" className={styles.btnLink}>
+                  <Button className={styles.headerBtn}>Entrar</Button>
+                </Link>
+                <Link href="/register" className={styles.btnLink}>
+                  <Button className={styles.headerBtn}>Registro</Button>
+                </Link>
+              </>
+            ) : (
+              <DropdownComponent username={username} />
+            )}
           </div>
         </Container>
       </div>

@@ -1,0 +1,35 @@
+@import "../../../styles/colors.module.scss";
+
+.formHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $medium-pink;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 2px solid black;
+  height: 50px;
+}
+.formTitle {
+  font-size: 21px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+.form {
+  width: 70%;
+  margin: 50px auto;
+  color: black;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: $medium-green;
+}
+.formBody {
+  padding: 20px;
+}
+.saveBtn {
+  background-color: $medium-pink;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
