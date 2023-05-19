@@ -63,7 +63,9 @@ export default function Register() {
       setTimeout(() => {
         setToastIsOpen(false);
       }, 3000);
-      setToastMessage(data.data.message);
+      setToastMessage(
+        data.data ? data.data.message : "Erro ao registrar usuário"
+      );
     }
   }
 

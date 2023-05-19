@@ -1,5 +1,16 @@
 import api from "./api";
 
+export type AdressType = {
+  id: number;
+  state: string;
+  city: string;
+  district: string;
+  street: string;
+  houseNumber: number;
+  phone: string;
+  userId: number;
+};
+
 interface UserParams {
   firstName: string;
   lastName: string;
@@ -26,16 +37,21 @@ const userService = {
     const token = sessionStorage.getItem("peludin-token");
 
     const res = await api
-      .get("/users/current", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .get(
+        "/users/current",
+        token
+          ? {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          : {}
+      )
       .catch((error) => {
         return error.response;
       });
 
-    return res.data;
+    return res;
   },
 
   updateUserInfos: async (params: UserParams) => {

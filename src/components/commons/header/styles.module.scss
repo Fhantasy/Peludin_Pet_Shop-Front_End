@@ -78,7 +78,7 @@
 }
 @media (max-width: 1199px) {
   .headerDescription {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 @media (max-width: 992px) {
@@ -106,7 +106,7 @@
 }
 @media (max-width: 499px) {
   .headerDescription {
-    font-size: 15px;
+    font-size: 17px;
     text-align: center;
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: $medium-pink;
@@ -118,8 +118,11 @@
     padding: 2px 5px;
     font-size: 11px;
   }
+  .navContainer {
+    gap: 20px;
+  }
   .navText {
-    font-size: 12px;
+    font-size: 14px;
     &:hover {
       font-size: 15px;
     }

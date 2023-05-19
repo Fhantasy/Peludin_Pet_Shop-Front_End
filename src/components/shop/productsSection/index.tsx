@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import useSWR from "swr";
 import ProductCard from "../../commons/productCard";
 import { useEffect, useState } from "react";
+import SpinnerComponent from "../../commons/spinner";
 
 interface props {
   categoryId?: string | number;
@@ -60,7 +61,7 @@ const ProductSection = function ({
   if (!productList) {
     return (
       <>
-        <p>Loading...</p>
+        <SpinnerComponent />
       </>
     );
   }

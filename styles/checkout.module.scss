@@ -1,0 +1,77 @@
+@import "../styles/colors.module.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.contentDiv {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin: 20px auto;
+}
+.adressDiv {
+  color: #141414;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.adressTitle {
+  color: black;
+  font-size: 22px;
+  font-family: Changa;
+}
+.itensDiv {
+  color: #141414;
+}
+.itensTitle {
+  color: black;
+  font-size: 22px;
+  font-family: Changa;
+}
+.itens {
+  background-color: white;
+  padding: 4px;
+  max-height: 80px;
+  overflow: auto;
+}
+.iten {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.productName {
+  width: 300px;
+  height: 20px;
+  overflow: hidden;
+}
+.totalPrice {
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+}
+.buyBtn {
+  background-color: green;
+  font-size: 20px;
+}
+.createAdressBtn {
+  background-color: $dark-green;
+  border: none;
+  margin-top: 5px;
+  &:hover {
+    background-color: white;
+    color: $dark-green;
+  }
+}
+
+@media (max-width: 499px) {
+  .adressTitle {
+    font-size: 19px;
+  }
+  .itensTitle {
+    font-size: 19px;
+  }
+  .productName {
+    width: 150px;
+  }
+}

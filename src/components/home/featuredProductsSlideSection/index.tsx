@@ -4,6 +4,7 @@ import { SplideProps } from "@splidejs/react-splide";
 import useSWR from "swr";
 import ProductCard from "../../commons/productCard";
 import SlideComponent from "../../commons/slideComponent";
+import SpinnerComponent from "../../commons/spinner";
 
 const FeaturedProductsSlideSection = function () {
   const { error, data } = useSWR(
@@ -14,7 +15,7 @@ const FeaturedProductsSlideSection = function () {
   if (!data)
     return (
       <>
-        <p>Loading...</p>
+        <SpinnerComponent />
       </>
     );
 

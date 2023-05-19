@@ -7,12 +7,14 @@ import { Button, Input } from "reactstrap";
 interface props {
   productsTotalPrice: (totalPrice: string) => void;
   cartHasUpdated: (updated: boolean) => void;
+  productsQuantities: (idQuantity: string) => void;
   productIds: string[];
 }
 
 const ProductCartCard = function ({
   productIds,
   productsTotalPrice,
+  productsQuantities,
   cartHasUpdated,
 }: props) {
   const [productList, setProductList] = useState<ProductType[]>();
@@ -86,6 +88,16 @@ const ProductCartCard = function ({
     document.cookie = cookieContent + coockieExpiration + path;
   }
 
+  function returnQuantities() {
+    if (quantity) {
+      let idsQuantities: string = "";
+      Object.entries(quantity).map((idQuantity) => {
+        return (idsQuantities += `${idQuantity} `);
+      });
+      productsQuantities(idsQuantities);
+      console.log(Object.entries(quantity));
+    }
+  }
   useEffect(() => {
     initialQuantities();
     getProducts().then((res) => {
@@ -98,7 +110,7 @@ const ProductCartCard = function ({
   }, [productList, quantity]);
 
   useEffect(() => {
-    console.log(quantity);
+    returnQuantities();
   }, [quantity]);
 
   if (!productList || productList.length === 0) {

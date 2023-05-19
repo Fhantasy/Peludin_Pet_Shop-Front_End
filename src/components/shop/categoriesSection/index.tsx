@@ -1,8 +1,7 @@
-import api from "@/src/services/api";
 import styles from "./styles.module.scss";
 import categoryService, { CategoryType } from "@/src/services/categoryService";
-import { useEffect, useState } from "react";
 import useSWR from "swr";
+import SpinnerComponent from "../../commons/spinner";
 
 export interface props {
   handler: (id: string | number) => void;
@@ -18,7 +17,7 @@ const CategoriesSection = function ({ handler }: props) {
   if (!data)
     return (
       <>
-        <p>Loading</p>
+        <SpinnerComponent />
       </>
     );
   return (

@@ -7,11 +7,11 @@
   background-color: $medium-pink;
   width: 100%;
   border-radius: 10px 10px 0 0;
-  border-bottom: 2px solid black;
   height: 50px;
 }
 .formTitle {
   font-size: 21px;
+  color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
 }
@@ -20,7 +20,6 @@
   margin: 50px auto;
   color: black;
   border-radius: 10px;
-  border: 2px solid black;
   background-color: $medium-green;
 }
 .formBody {
@@ -31,5 +30,27 @@
   &:hover {
     background-color: white;
     color: black;
+  }
+}
+
+@media (max-width: 991px) {
+  .form {
+    width: 90%;
+  }
+}
+@media (max-width: 499px) {
+  .form {
+    width: 95%;
+    margin: 20px auto;
+    font-size: 14px;
+  }
+  .formTitle {
+    font-size: 18px;
+  }
+  .input {
+    font-size: 14px;
+  }
+  .saveBtn {
+    font-size: 15px;
   }
 }

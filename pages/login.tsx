@@ -25,26 +25,31 @@ export default function Login() {
     const res = await AuthService.login(params);
 
     if (res.status === 200) {
-      router.push("/");
+      if (router.query.checkout === "true") {
+        router.push("/checkout");
+      } else {
+        router.push("/?login=true");
+      }
     } else {
       setToastIsOpen(true);
       setToastColor("bg-danger");
       setTimeout(() => {
         setToastIsOpen(false);
       }, 3000);
-      setToastMessage(res.response.data.message);
+      setToastMessage(
+        res.response ? res.response.data.message : "Erro ao fazer login!"
+      );
     }
   }
 
   useEffect(() => {
     if (sessionStorage.getItem("peludin-token")) {
-      router.push("/");
+      router.push("/?login=true");
     }
   }, []);
 
   useEffect(() => {
-    const registred = router.query.registred;
-    if (registred === "true") {
+    if (router.query.registred === "true") {
       setToastIsOpen(true);
       setToastColor("bg-success");
       setTimeout(() => {

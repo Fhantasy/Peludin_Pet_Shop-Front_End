@@ -16,7 +16,7 @@ interface LoginParams {
 const AuthService = {
   register: async (params: RegisterParams) => {
     const res = await api.post("/auth/register", params).catch((error) => {
-      if (error.response.status === 400) {
+      if (error.response?.status === 400) {
         return error.response;
       }
       return error;

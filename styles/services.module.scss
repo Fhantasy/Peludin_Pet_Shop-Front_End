@@ -1,0 +1,155 @@
+@import "../styles/colors.module.scss";
+
+.showerDiv {
+  display: flex;
+  background-color: $light-green;
+  margin: 20px auto;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 15px;
+}
+.gridDiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.title {
+  font-size: 26px;
+  font-family: "Changa";
+  color: #141414;
+}
+.description {
+  font-family: "Oswald";
+  font-size: 18px;
+  color: #3d3d3d;
+}
+.subtitle {
+  font-size: 22px;
+  font-family: "Changa";
+  color: #141414;
+  margin-top: 20px;
+}
+.typeTitle {
+  font-family: "Oswald";
+  font-size: 19px;
+  font-weight: bold;
+  color: #141414;
+}
+.typeDescription {
+  color: #dfdfdf;
+  line-height: 18px;
+}
+.img {
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  max-height: 350px;
+}
+.tosaImg {
+  max-width: 300px;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+.tosaGrid {
+  padding: 0px 10px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.contentDiv {
+  background-color: $light-green;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 15px;
+}
+.vetGrid {
+  padding: 0px 10px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.vetImg {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.vetWhatsImg {
+  width: 40px;
+}
+.contactGrid {
+  padding: 0px 10px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.contactDescription {
+  font-size: 19px;
+  font-family: "Oswald";
+  color: #141414;
+  font-weight: bold;
+}
+.about {
+  font-family: "Changa";
+  font-size: 22px;
+  color: black;
+  text-decoration: underline;
+  margin-top: 10px;
+  transition: 0.4s;
+  &:hover {
+    transform: scale(110%);
+    color: #dfdfdf;
+  }
+}
+.logoImg {
+  width: 200px;
+}
+
+@media (max-width: 991px) {
+  .img {
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    max-height: 200px;
+  }
+}
+@media (max-width: 767px) {
+  .gridDiv {
+    display: flex;
+    flex-direction: column;
+  }
+  .img {
+    width: 50%;
+    height: 100%;
+  }
+}
+@media (max-width: 499px) {
+  .showerDiv {
+    flex-direction: column;
+  }
+  .img {
+    width: 90%;
+    align-self: center;
+  }
+  .tosaImg {
+    width: 90%;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 15px;
+  }
+  .typeTitle {
+    font-size: 16px;
+  }
+  .typeDescription {
+    font-size: 14px;
+  }
+  .contactDescription {
+    font-size: 17px;
+  }
+}

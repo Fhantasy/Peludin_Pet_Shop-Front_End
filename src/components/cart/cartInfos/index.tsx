@@ -1,13 +1,20 @@
 import styles from "./styles.module.scss";
 import { Button, Form, Input } from "reactstrap";
 import InputMask from "react-input-mask";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
+import ToastComponent from "../../commons/toastComponent";
+import { useRouter } from "next/router";
 
 interface props {
   totalPrice?: string;
+  productsQuantities: string;
 }
 
-const CartInfos = function ({ totalPrice }: props) {
+const CartInfos = function ({ totalPrice, productsQuantities }: props) {
+  const router = useRouter();
+  const [toastIsOpen, setToastIsOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
   const [value, setValue] = useState("");
   const [fretePrice, setFretePrice] = useState<string>();
 
@@ -22,6 +29,11 @@ const CartInfos = function ({ totalPrice }: props) {
     setTimeout(() => {
       setFretePrice("");
     }, 3000);
+  }
+
+  function handleBuy() {
+    sessionStorage.setItem("products-quantities", productsQuantities);
+    router.push("/checkout");
   }
 
   return (
@@ -46,8 +58,19 @@ const CartInfos = function ({ totalPrice }: props) {
         <p className={styles.totalPrice}>
           Preço total: R$ {totalPrice ? totalPrice : "0.00"}
         </p>
-        <Button className={styles.buyBtn}>Finalizar a compra</Button>
+        <Button
+          className={styles.buyBtn}
+          disabled={productsQuantities ? false : true}
+          onClick={handleBuy}
+        >
+          Finalizar a compra
+        </Button>
       </div>
+      <ToastComponent
+        color="bg-danger"
+        isOpen={toastIsOpen}
+        message={toastMessage}
+      />
     </>
   );
 };

@@ -21,20 +21,20 @@ const Header = function ({ cartUpdated }: props) {
 
   async function getCurrentUser() {
     const user = await userService.getCurrent();
-    setUsername(user.firstName);
+    setUsername(user.data.firstName);
   }
 
   useEffect(() => {
-    getCurrentUser();
-  }, []);
-
-  useEffect(() => {
-    if (sessionStorage.getItem("peludin-token")) setLoged(true);
+    if (sessionStorage.getItem("peludin-token")) {
+      setLoged(true);
+      getCurrentUser();
+    }
   }, []);
 
   useEffect(() => {
     getCartCount();
   }, [[], cartUpdated]);
+
   return (
     <>
       <div className={styles.headerDiv}>

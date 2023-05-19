@@ -1,5 +1,12 @@
 @import "../styles/colors.module.scss";
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.contentContainer {
+  flex: 1 0 auto;
+}
 .title {
   font-size: 35px;
   font-family: Changa;
@@ -27,5 +34,21 @@
   &:hover {
     background-color: white;
     color: black;
+  }
+}
+
+@media (max-width: 499px) {
+  .title {
+    font-size: 25px;
+  }
+  .btnSwitch {
+    width: 150px;
+    font-size: 15px;
+    margin: 10px auto;
+  }
+  .btnSelected {
+    width: 150px;
+    font-size: 15px;
+    margin: 10px auto;
   }
 }
