@@ -1,0 +1,66 @@
+@import "../styles/colors.module.scss";
+
+.presentationDiv {
+  margin: 25px auto;
+}
+.title {
+  font-family: "Oswald";
+  font-size: 25px;
+  font-weight: bold;
+  color: $medium-pink;
+}
+.description {
+  font-family: "Oswald";
+  color: #141414;
+}
+.subtitle {
+  font-size: 23px;
+  font-family: "Oswald";
+  color: $dark-green;
+  margin-bottom: 10px;
+}
+.workersDiv {
+  text-align: center;
+}
+.workersCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  width: 350px;
+  font-family: "Changa";
+  font-size: 18px;
+  color: #141414;
+  text-align: center;
+}
+.adressDiv {
+  color: #141414;
+  background-color: $medium-pink;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+.whatsImg {
+  width: 30px;
+}
+
+@media (max-width: 991px) {
+  .card {
+    width: 270px;
+  }
+}
+@media (max-width: 499px) {
+  .title {
+    font-size: 22px;
+    text-align: center;
+  }
+  .description {
+    text-align: center;
+  }
+}

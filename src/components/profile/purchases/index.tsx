@@ -21,6 +21,13 @@ const Purchases = function () {
     setModalOpen(false);
   }
 
+  function totalQuantity(purchase: PurchaseType) {
+    const totalQuantity = purchase.products.reduce((sum, product) => {
+      return sum + product.quantity;
+    }, 0);
+    return totalQuantity;
+  }
+
   function handleDateString(stringDate?: string) {
     if (stringDate) {
       const date = new Date(stringDate);
@@ -66,7 +73,7 @@ const Purchases = function () {
             <p>
               Data da Compra: {handleDateString(purchase.purchase.createdAt)}
             </p>
-            <p>Quantidade de items: {purchase.products.length} unidade(s)</p>
+            <p>Quantidade de items: {totalQuantity(purchase)} unidade(s)</p>
           </div>
         ))}
       </div>

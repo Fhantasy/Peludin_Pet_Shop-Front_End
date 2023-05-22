@@ -112,13 +112,15 @@ export default function ProductPage() {
                   <>
                     <p
                       className={styles.oldPrice}
-                    >{`De R$ ${product.price} por`}</p>{" "}
+                    >{`De R$ ${product.price.toFixed(2)} por`}</p>{" "}
                     <p
                       className={styles.onSalePrice}
-                    >{`R$ ${product.priceOnSale}`}</p>
+                    >{`R$ ${product.priceOnSale.toFixed(2)}`}</p>
                   </>
                 ) : (
-                  <p className={styles.price}>{`R$ ${product.price}`}</p>
+                  <p className={styles.price}>{`R$ ${product.price.toFixed(
+                    2
+                  )}`}</p>
                 )}
                 <Button
                   className={styles.cartButton}
