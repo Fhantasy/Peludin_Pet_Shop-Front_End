@@ -28,7 +28,7 @@ export default function Contact() {
 
     const mail = await mailService.sendMail(mailParams);
 
-    if (mail.status === 200) {
+    if (mail && mail.status === 200) {
       setToastIsOpen(true);
       setToastColor("bg-success");
       setTimeout(() => {
@@ -53,7 +53,7 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Peludin - Login</title>
+        <title>Peludin - Contato</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

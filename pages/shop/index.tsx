@@ -27,21 +27,10 @@ export default function Shop() {
   function getCategoryId(id: number | string) {
     setCategoryId(id);
   }
+
   function getpageNumber(number: number) {
     setPageNumber(number);
   }
-
-  useEffect(() => {
-    getTotalPageNumber;
-  }, []);
-
-  useEffect(() => {
-    getCategoryId;
-  }, []);
-
-  useEffect(() => {
-    setSortBy;
-  }, []);
 
   return (
     <>
@@ -63,26 +52,26 @@ export default function Shop() {
         <Container>
           <SearchSection />
         </Container>
-        <div className={styles.shopContainer}>
-          <Container className={styles.shopDiv}>
-            <CategoriesSection handler={getCategoryId} />
-            <div>
-              <SortSection handler={getSortBy} />
-              <ProductSection
-                categoryId={categoryId}
-                sortBy={sortBy}
-                totalPageNumberHandler={getTotalPageNumber}
-                currentPageNumber={pageNumber}
+
+        <Container className={styles.shopContainer}>
+          <CategoriesSection handler={getCategoryId} />
+          <div>
+            <SortSection handler={getSortBy} />
+            <ProductSection
+              categoryId={categoryId}
+              sortBy={sortBy}
+              totalPageNumberHandler={getTotalPageNumber}
+              currentPageNumber={pageNumber}
+            />
+            <div className={styles.paginationDiv}>
+              <PaginationSection
+                totalPageNumber={totalPageNumber}
+                currentPageNumber={getpageNumber}
               />
-              <div className={styles.paginationDiv}>
-                <PaginationSection
-                  totalPageNumber={totalPageNumber}
-                  currentPageNumber={getpageNumber}
-                />
-              </div>
             </div>
-          </Container>
-        </div>
+          </div>
+        </Container>
+
         <Footer />
       </main>
     </>

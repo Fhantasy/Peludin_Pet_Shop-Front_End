@@ -8,9 +8,7 @@ import { useRouter } from "next/router";
 import { Button } from "reactstrap";
 import Footer from "@/src/components/commons/footer";
 import Link from "next/link";
-import purchaseService, {
-  PurchaseParams,
-} from "@/src/services/purchaseService";
+import purchaseService from "@/src/services/purchaseService";
 import ToastComponent from "@/src/components/commons/toastComponent";
 import SpinnerComponent from "@/src/components/commons/spinner";
 
@@ -32,7 +30,7 @@ export default function Checkout() {
     if (idsQuantitiesString) {
       const idsQuantitiesList = idsQuantitiesString?.split(" ");
       idsQuantitiesList?.pop();
-      const res = idsQuantitiesList!.map((idQuantity) => {
+      const productsQuantities = idsQuantitiesList!.map((idQuantity) => {
         const idQuantityArray = idQuantity.split(",");
 
         return {
@@ -41,7 +39,7 @@ export default function Checkout() {
         };
       });
 
-      setProductsQuantities(res);
+      setProductsQuantities(productsQuantities);
     } else {
       router.push("/cart");
     }

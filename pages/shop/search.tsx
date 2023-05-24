@@ -22,7 +22,7 @@ export default function Search() {
   const getSearchProducts = async () => {
     if (typeof searchName === "string") {
       const res = await productService.getSearch(searchName);
-      setSearchProducts(res.data);
+      if (res?.data) setSearchProducts(res.data);
     }
   };
 
@@ -44,10 +44,6 @@ export default function Search() {
 
   function getPageNumber(number: number) {
     setPageNumber(number);
-  }
-
-  function backToShop() {
-    router.push("/shop");
   }
 
   useEffect(() => {
@@ -77,7 +73,10 @@ export default function Search() {
         <Header />
         <div className={styles.productsContainer}>
           <div className={styles.searchHeader}>
-            <Button className={styles.backBtn} onClick={backToShop}>
+            <Button
+              className={styles.backBtn}
+              onClick={() => router.push("/shop")}
+            >
               Voltar para a loja
             </Button>
             <SearchSection />

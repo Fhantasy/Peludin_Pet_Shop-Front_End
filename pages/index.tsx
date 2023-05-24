@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
 import Header from "@/src/components/commons/header";
 import PresentationSlideSection from "@/src/components/home/presentationSlideSection";
 import FeaturedProductsSlideSection from "@/src/components/home/featuredProductsSlideSection";
@@ -38,6 +37,11 @@ export default function Home() {
     <>
       <Head>
         <title>Peludin - Home</title>
+        <meta property="og:title" content="Peludin_Pet_Shop" key="title" />
+        <meta
+          name="description"
+          content="O melhor Pet Shop de São Paulo e região."
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

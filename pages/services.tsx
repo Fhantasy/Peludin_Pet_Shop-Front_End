@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/services.module.scss";
 import Header from "@/src/components/commons/header";
-import { Col, Container, Row } from "reactstrap";
+import { Container } from "reactstrap";
 import Footer from "@/src/components/commons/footer";
 import Link from "next/link";
 

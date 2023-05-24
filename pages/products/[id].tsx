@@ -1,9 +1,9 @@
 import styles from "../../styles/product.module.scss";
 import Footer from "@/src/components/commons/footer";
 import Header from "@/src/components/commons/header";
+import SpinnerComponent from "@/src/components/commons/spinner";
 import productService, { ProductType } from "@/src/services/productService";
 import Head from "next/head";
-import useSWR from "swr";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Button, Container } from "reactstrap";
@@ -12,8 +12,8 @@ export default function ProductPage() {
   const router = useRouter();
   const id = router.query.id;
   const [product, setProduct] = useState<ProductType>();
-  const [cartHasUpdated, setCartHasUpdated] = useState<boolean>(false);
-  const [cartErrorMessage, setCartErrorMessage] = useState("");
+  const [cartHasUpdated, setCartHasUpdated] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function getProducts() {
     if (typeof id === "string") {
@@ -22,7 +22,7 @@ export default function ProductPage() {
     }
   }
 
-  function coockieCreation() {
+  function cookieCreation() {
     const cookies = document.cookie;
     let cookieContent = "";
 
@@ -54,9 +54,9 @@ export default function ProductPage() {
   }
 
   async function cartError(error: Error) {
-    setCartErrorMessage(error.message);
+    setErrorMessage(error.message);
     setTimeout(() => {
-      setCartErrorMessage("");
+      setErrorMessage("");
     }, 3000);
   }
 
@@ -67,7 +67,7 @@ export default function ProductPage() {
   if (!product) {
     return (
       <>
-        <p>Loading...</p>
+        <SpinnerComponent />
       </>
     );
   }
@@ -126,7 +126,7 @@ export default function ProductPage() {
                   className={styles.cartButton}
                   onClick={() => {
                     try {
-                      coockieCreation();
+                      cookieCreation();
                     } catch (error) {
                       if (error instanceof Error) {
                         cartError(error);
@@ -136,8 +136,8 @@ export default function ProductPage() {
                 >
                   Adicionar ao carrinho
                 </Button>
-                {cartErrorMessage !== "" ? (
-                  <p className={styles.cartErrorMessage}>{cartErrorMessage}</p>
+                {errorMessage !== "" ? (
+                  <p className={styles.cartErrorMessage}>{errorMessage}</p>
                 ) : (
                   <></>
                 )}

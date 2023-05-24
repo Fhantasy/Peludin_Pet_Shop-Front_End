@@ -64,10 +64,9 @@
   margin: 7px 0 7px 0;
   color: white;
   font-family: Changa;
-  transition: 0.4s;
+  transition: 0.5s;
   &:hover {
-    color: $dark-green;
-    font-size: 20px;
+    transform: scale(1.1);
   }
 }
 

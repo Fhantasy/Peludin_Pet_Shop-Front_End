@@ -1,14 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/about.module.scss";
 import Header from "@/src/components/commons/header";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardImg,
-  CardTitle,
-  Container,
-} from "reactstrap";
+import { Card, CardTitle, Container } from "reactstrap";
 import Footer from "@/src/components/commons/footer";
 
 export default function About() {

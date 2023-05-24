@@ -11,14 +11,16 @@ const FeaturedProductsSlideSection = function () {
     "/featured",
     productService.getFeaturedProducts
   );
+
   if (error) return error;
-  if (!data)
+  if (!data) {
     return (
       <>
         <SpinnerComponent />
       </>
     );
-
+  }
+  console.log(data);
   const cards: JSX.Element[] = data.data.map((product: ProductType) => {
     return <ProductCard product={product} />;
   });

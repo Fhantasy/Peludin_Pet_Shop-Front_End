@@ -11,8 +11,7 @@ import { Container } from "reactstrap";
 export default function Cart() {
   const [idList, setIdList] = useState<string[]>([]);
   const [totalPrice, setTotalPrice] = useState<string>();
-  const [productIdsQuantitites, setProductIdsQuantitites] =
-    useState<string>("");
+  const [productIdsQuantities, setProductIdsQuantities] = useState<string>("");
   const [cartUpdate, setCartUpdate] = useState<boolean>(false);
 
   function getIdList() {
@@ -29,7 +28,7 @@ export default function Cart() {
   }
 
   function getProductsQuantities(idsQuantities: string) {
-    setProductIdsQuantitites(idsQuantities);
+    setProductIdsQuantities(idsQuantities);
   }
 
   function cartHasUpdated(updated: boolean) {
@@ -67,7 +66,7 @@ export default function Cart() {
           />
           <CartInfos
             totalPrice={totalPrice}
-            productsQuantities={productIdsQuantitites}
+            productsQuantities={productIdsQuantities}
           ></CartInfos>
         </Container>
         <Footer />

@@ -3,15 +3,7 @@ import styles from "../styles/registerLogin.module.scss";
 import Header from "@/src/components/commons/header";
 import Head from "next/head";
 import { FormEvent, useEffect, useState } from "react";
-import {
-  Button,
-  Container,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Toast,
-} from "reactstrap";
+import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import AuthService from "@/src/services/authService";
 import { useRouter } from "next/router";
 import ToastComponent from "@/src/components/commons/toastComponent";
